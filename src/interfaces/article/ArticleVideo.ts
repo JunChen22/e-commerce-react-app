@@ -1,0 +1,3 @@
+interface ArticleVideo {
+  url: string;
+}

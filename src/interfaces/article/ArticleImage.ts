@@ -1,0 +1,3 @@
+interface ArticleImage {
+  filename: string;
+}
