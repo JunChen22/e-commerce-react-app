@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Product from '../interfaces/product';
+import { Product } from '../interfaces/product/Product';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);

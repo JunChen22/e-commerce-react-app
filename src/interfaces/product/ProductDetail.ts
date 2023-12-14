@@ -2,7 +2,7 @@ import { SkuVariant } from './SkuVariant';
 import { Picture } from './Picture';
 import { Attribute } from './Attribute'; 
 
-interface ProductDetail {
+export interface ProductDetail {
   brandName: string;
   name: string;
   categoryName: string;
