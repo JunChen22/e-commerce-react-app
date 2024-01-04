@@ -1,3 +1,0 @@
-interface Picture {
-  filename: string;
-}
