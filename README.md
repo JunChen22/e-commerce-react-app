@@ -17,8 +17,8 @@ E-commerce-react
 
 ``` 
 
-
-
+layout.tsx - ensure every page is the same.
+globals.css - pre-written by Shadcn-UI
 
 
 ### Tech stack

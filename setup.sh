@@ -3,6 +3,8 @@
 https://nextjs.org/learn/react-foundations
 
 
+
+
 # install next framework
 # using Next version 14.0.4
 npx create-next-app@latest    
@@ -34,12 +36,6 @@ npm run dev
 npm run build
 
 
-
-
-
-
-
-
 # clean up 
 
 npm prune
@@ -57,7 +53,7 @@ read the byte book
 
 might add a total or incart boolean in cart item table
 
-emmet balance
+emmet balance outward
 control + m
 
 
@@ -68,3 +64,24 @@ shit + alt + o
 
 auto format
 Shift + Alt + F
+
+shift + control + p   => reload window
+to solve import error
+
+
+
+# Command used
+# create project
+$ npx create-next-app@14.0.0 e-commerece-react-app
+
+# add shadcn-ui and it's components
+$ npx shadcn-ui@latest init
+$ npx shadcn-ui@latest add button
+
+
+# add lucide-react, the icon
+$ npx add lucide-react
+
+
+
+
