@@ -1,22 +1,22 @@
 export const PRODUCT_CATEGORIES = [
     {
-        label: '',
-        value: '' as const,
+        label: 'label 1',
+        value: 'value 1' as const,
         featured: [
             {
-                name: '',
+                name: 'item 1',
                 href: '#',
-                imageSrc: '/nav'
+                imageSrc: '/nav/icons/logo.png'
             },
             {
-                name: '',
+                name: 'item 2',
                 href: '#',
-                imageSrc: '/nav'
+                imageSrc: '/nav/icons/logo.png'
             },
             {
-                name: '',
+                name: 'item 3',
                 href: '#',
-                imageSrc: '/nav'
+                imageSrc: '/nav/icons/logo.png'
             }
         ]
     }
