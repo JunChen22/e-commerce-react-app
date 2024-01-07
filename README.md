@@ -8,12 +8,12 @@ Using react js and next js framework.
 ``` lua
 E-commerce-react 
 ├── public  	-- public asset   
-├── src
+└── src
+    ├── app
     ├── component   
-    ├── interfaces   
-    ├── pages   
-    ├── style   
-    └── util
+    |   └── UI  -- pre-build components by Shadcn-UI   
+    ├── config   
+    └── lib
 
 ``` 
 
@@ -29,9 +29,6 @@ globals.css - pre-written by Shadcn-UI
 | [Shadcn-UI](https://ui.shadcn.com/)                                                    |                                       |         | UI                                                      |
 | [Lucide](https://lucide.dev)                                                           |                                       |         | Icons                                                   |
 | []()                                                                                   |                                       |         |                                                         |
-| []()                                                                                   |                                       |         |                                                         |
-|----------------------------------------------------------------------------------------|---------------------------------------|---------|---------------------------------------------------------|
-
 
 
 
@@ -124,7 +121,6 @@ $ npx create-next-app@14.0.0 e-commerece-react-app
 
 # add shadcn-ui and it's components
 $ npx shadcn-ui@latest init
-$ npx shadcn-ui@latest add button
 
 
 # add lucide-react, the icon
@@ -132,3 +128,50 @@ $ npx add lucide-react
 
 
 
+
+
+
+
+
+
+
+```
+npx shadcn-ui@latest add dialog
+npx shadcn-ui@latest add accordion
+npx shadcn-ui@latest add alert
+npx shadcn-ui@latest add avatar
+npx shadcn-ui@latest add badge
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add hover-card
+npx shadcn-ui@latest add input
+npx shadcn-ui@latest add label
+npx shadcn-ui@latest add menubar
+npx shadcn-ui@latest add pagination
+npx shadcn-ui@latest add popover
+npx shadcn-ui@latest add progress
+npx shadcn-ui@latest add radio-group
+npx shadcn-ui@latest add scroll-area
+npx shadcn-ui@latest add select
+npx shadcn-ui@latest add separator
+npx shadcn-ui@latest add sheet
+npx shadcn-ui@latest add skeleton
+npx shadcn-ui@latest add sonner
+npx shadcn-ui@latest add switch
+npx shadcn-ui@latest add table
+npx shadcn-ui@latest add tabs
+npx shadcn-ui@latest add textarea
+npx shadcn-ui@latest add toast
+npx shadcn-ui@latest add tooltip
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add carousel
+npx shadcn-ui@latest add checkbox
+npx shadcn-ui@latest add command
+npx shadcn-ui@latest add context-menu
+npx shadcn-ui@latest add alert-dialog	// also includes button
+npx shadcn-ui@latest add button
+
+// combination
+combobox = Popover + Command   https://ui.shadcn.com/docs/components/combobox
+data-table = Table	https://ui.shadcn.com/docs/components/data-table
+date-picker = Popover + Calendar https://ui.shadcn.com/docs/components/date-picker
+```
