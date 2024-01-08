@@ -7,27 +7,32 @@ Using react js and next js framework.
 
 ``` lua
 E-commerce-react 
-├── public  	-- public asset   
+├── public  	    -- public asset   
 └── src
     ├── app
     ├── component   
-    |   └── UI  -- pre-build components by Shadcn-UI   
+    |   └── UI      -- pre-build components by Shadcn-UI   
     ├── config   
-    └── lib
+    ├── hooks       -- custom hooks that are not by react 16.8   
+    ├── interfaces  -- pre-defined interfaces 
+    └── lib         -- common library
 
 ``` 
 
 layout.tsx - ensure every page is the same.
 globals.css - pre-written by Shadcn-UI
-
+Next js 13 to 14 change routing from pages/index.tsx to src/app/page.tsx
+https://nextjs.org/docs/app/building-your-application/routing
 
 ### Tech stack
 | Tech                                                                                   | role                                  | version | How is it being used here                               |
 |----------------------------------------------------------------------------------------|---------------------------------------|---------|---------------------------------------------------------|
-| [React.js](https://react.dev/)                                                         |                                       |         |                                                         |
-| [Next.js](https://nextjs.org/)                                                         |                                       |         |                                                         |
+| [React.js](https://react.dev/)                                                         | JavaScript library                    | 18.0.0  |                                                         |
+| [Next.js](https://nextjs.org/)                                                         | React js framework                    | 14.0.0  |                                                         |
+| [TypeScript](https://www.typescriptlang.org/)                                          | Typed Code                            | 5.0.0   |                                                         |
+| [Node.js](https://nodejs.org/en/download)                                              | Package Management                    | 20.10.0 | Download dependencies and start project                 |
 | [Shadcn-UI](https://ui.shadcn.com/)                                                    |                                       |         | UI                                                      |
-| [Lucide](https://lucide.dev)                                                           |                                       |         | Icons                                                   |
+| [Lucide](https://lucide.dev)                                                           | Icons                                 | 0.303.0 | Icons                                                   |
 | []()                                                                                   |                                       |         |                                                         |
 
 
@@ -36,19 +41,9 @@ globals.css - pre-written by Shadcn-UI
 to start
 
 $ npm install		// download and update dependencies
-
 $ npm run dev
 
 
-
-
-
-
-
-
-
-# start note
-https://nextjs.org/learn/react-foundations
 
 # install next framework
 # using Next version 14.0.4
@@ -95,7 +90,6 @@ leet code
 read the byte book
 
 
-
 might add a total or incart boolean in cart item table
 
 emmet balance outward
@@ -113,8 +107,6 @@ Shift + Alt + F
 shift + control + p   => reload window
 to solve import error
 
-
-
 # Command used
 # create project
 $ npx create-next-app@14.0.0 e-commerece-react-app
@@ -125,14 +117,6 @@ $ npx shadcn-ui@latest init
 
 # add lucide-react, the icon
 $ npx add lucide-react
-
-
-
-
-
-
-
-
 
 
 ```
@@ -175,3 +159,4 @@ combobox = Popover + Command   https://ui.shadcn.com/docs/components/combobox
 data-table = Table	https://ui.shadcn.com/docs/components/data-table
 date-picker = Popover + Calendar https://ui.shadcn.com/docs/components/date-picker
 ```
+
