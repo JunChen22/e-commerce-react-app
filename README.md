@@ -37,7 +37,8 @@ https://nextjs.org/docs/app/building-your-application/routing
 
 
 to start
+```
 $ export PATH=/usr/local/node/bin:$PATH
 $ npm install		// download and update dependencies
 $ npm run dev
-
+```
