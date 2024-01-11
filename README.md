@@ -7,22 +7,23 @@ Using react js and next js framework.
 
 ``` lua
 E-commerce-react 
-├── public  	    -- public asset   
-└── src
-    ├── app
-    ├── component   
-    |   └── UI      -- pre-build components by Shadcn-UI   
-    ├── config   
-    ├── hooks       -- custom hooks that are not by react 16.8   
-    ├── interfaces  -- pre-defined interfaces 
-    └── lib         -- common library
+├── public  	            -- public asset   
+├── src
+│   ├── app
+│   |   ├── global.css      -- pre-written by Shadcn-UI
+│   |   └── layout.tsx      -- ensure every page is the same. 
+│   ├── component   
+│   |   └── UI              -- pre-build components by Shadcn-UI   
+│   ├── config   
+│   ├── hooks               -- custom hooks that are not by react 16.8+   
+│   ├── interfaces          -- pre-defined interfaces 
+│   └── lib                 -- common library
+└── package.json            -- package versions
 
-``` 
-
-layout.tsx - ensure every page is the same.
-globals.css - pre-written by Shadcn-UI
 Next js 13 to 14 change routing from pages/index.tsx to src/app/page.tsx
 https://nextjs.org/docs/app/building-your-application/routing
+``` 
+
 
 ### Tech stack
 | Tech                                                                                   | role                                  | version | How is it being used here                               |
@@ -34,7 +35,6 @@ https://nextjs.org/docs/app/building-your-application/routing
 | [Shadcn-UI](https://ui.shadcn.com/)                                                    |                                       |         | UI                                                      |
 | [Lucide](https://lucide.dev)                                                           | Icons                                 | 0.303.0 | Icons                                                   |
 | []()                                                                                   |                                       |         |                                                         |
-
 
 to start
 ```
