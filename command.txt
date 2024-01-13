@@ -1,6 +1,6 @@
 # install next framework
-# using Next version 14.0.4
-npx create-next-app@latest    
+# using Next version 14.0.0
+npx create-next-app@14.0.0    
 
 # need node 18.17.0 or later version
 
@@ -41,7 +41,6 @@ might add a total or in-cart boolean in the cart item table
 emmet balance outward
 control + m
 
-
 co-pilot is control + i 
 
 to clear out the unnecessary dependency is 
@@ -52,6 +51,9 @@ Shift + Alt + F
 
 shift + control + p   => reload window
 to solve import error
+
+
+
 
 # Command used
 # create project
