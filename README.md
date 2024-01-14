@@ -34,7 +34,6 @@ https://nextjs.org/docs/app/building-your-application/routing
 | [Node.js](https://nodejs.org/en/download)                                              | Package Management                    | 20.10.0 | Download dependencies and start project                 |
 | [Shadcn-UI](https://ui.shadcn.com/)                                                    |                                       |         | UI                                                      |
 | [Lucide](https://lucide.dev)                                                           | Icons                                 | 0.303.0 | Icons                                                   |
-| []()                                                                                   |                                       |         |                                                         |
 
 to start
 ```
