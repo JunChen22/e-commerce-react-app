@@ -1,5 +1,5 @@
 ## e-commerece-react-app
-[![Java CI with Maven](https://github.com/JunChen22/e-commerce-microservice/actions/workflows/maven.yml/badge.svg)](https://github.com/JunChen22/e-commerce-microservice/actions/workflows/maven.yml) <a href="https://github.com/JunChen22/e-commerce-microservice"><img src="https://img.shields.io/badge/Backend-Spring-green"></a> <a href="https://github.com/JunChen22/e-commerce"><img src="https://img.shields.io/badge/Mononith-version-green"></a> <a href="TBD"><img src="https://img.shields.io/badge/Demo-running-green"></a>
+ <a href="https://github.com/JunChen22/e-commerce-microservice"><img src="https://img.shields.io/badge/Backend-Spring-green"></a> <a href="https://github.com/JunChen22/e-commerce"><img src="https://img.shields.io/badge/Mononith-version-green"></a> <a href="TBD"><img src="https://img.shields.io/badge/Demo-running-green"></a>
 
 
 this is the front end for e-commerce-microservice and e-commerce.
@@ -32,8 +32,9 @@ https://nextjs.org/docs/app/building-your-application/routing
 | [Next.js](https://nextjs.org/)                                                         | React js framework                    | 14.0.0  |                                                         |
 | [TypeScript](https://www.typescriptlang.org/)                                          | Typed Code                            | 5.0.0   |                                                         |
 | [Node.js](https://nodejs.org/en/download)                                              | Package Management                    | 20.10.0 | Download dependencies and start project                 |
-| [Shadcn-UI](https://ui.shadcn.com/)                                                    |                                       |         | UI                                                      |
+| [Shadcn-UI](https://ui.shadcn.com/)                                                    | UI components                         |         | pre-defined UI components                               |
 | [Lucide](https://lucide.dev)                                                           | Icons                                 | 0.303.0 | Icons                                                   |
+| [Tailwind](https://tailwindcss.com/)                                                   | CSS Framework                         |         |                                                    |
 
 to start
 ```
