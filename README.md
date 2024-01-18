@@ -1,7 +1,6 @@
 ## e-commerece-react-app
  <a href="https://github.com/JunChen22/e-commerce-microservice"><img src="https://img.shields.io/badge/Backend-Spring-green"></a> <a href="https://github.com/JunChen22/e-commerce"><img src="https://img.shields.io/badge/Mononith-version-green"></a> <a href="TBD"><img src="https://img.shields.io/badge/Demo-running-green"></a>
 
-
 this is the front end for e-commerce-microservice and e-commerce.
 Using react js and next js framework.
 
