@@ -9,10 +9,6 @@ $ tar -xJf node-v20.10.0-linux-x64.tar.xz
 $ mv node-v20.10.0-linux-x64 /usr/local/node
 $ echo 'export PATH=/usr/local/node/bin:$PATH' >> ~/.bashrc
 
-# install next framework
-# using Next version 14.0.0
-$ npx create-next-app@14.0.0    
-
 $ node --version           // v20.10.0
 $ npm --version            // 10.2.3
 $ npm show next version    // 14.0.0
@@ -27,6 +23,14 @@ $ npm run build // to deploy
 
 # create this app
 $ npx create-next-app@14.0.0 e-commerce-react-app -e with-typescript
+What is your project named? my-app
+Would you like to use TypeScript? Yes
+Would you like to use ESLint? Yes
+Would you like to use Tailwind CSS? Yes
+Would you like to use `src/` directory? Yes
+Would you like to use App Router? (recommended)  Yes
+Would you like to customize the default import alias (@/*)? No 
+What import alias would you like configured? @/*
 
 # add shadcn-ui and its components
 $ npx shadcn-ui@latest init
