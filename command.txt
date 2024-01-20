@@ -20,7 +20,6 @@ $ npm install
 $ npm run dev
 $ npm run build // to deploy
 
-
 # create this app
 $ npx create-next-app@14.0.0 e-commerce-react-app -e with-typescript
 What is your project named? my-app
@@ -37,7 +36,6 @@ $ npx shadcn-ui@latest init
 
 # add lucide-react, the icon
 $ npx add lucide-react
-
 
 ``` // other components that I might want
 npx shadcn-ui@latest add dialog
