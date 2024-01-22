@@ -83,7 +83,6 @@ $ npm prune
 $ rm -rf node_modules
 
 -------------------------------------
-
 # Visual Studio Code commands or key bindings changes
 emmet balance outward
 control + m
