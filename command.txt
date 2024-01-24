@@ -77,7 +77,6 @@ combobox = Popover + Command   https://ui.shadcn.com/docs/components/combobox
 data-table = Table	https://ui.shadcn.com/docs/components/data-table
 date-picker = Popover + Calendar https://ui.shadcn.com/docs/components/date-picker
 ```
-
 # clean up 
 $ npm prune
 $ rm -rf node_modules
