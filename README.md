@@ -37,6 +37,5 @@ to start
 ```
 $ npm install		// download and update dependencies
 $ npm run dev
-
 * there's a required command list to download all the necessary dependencies.
 ```
