@@ -34,7 +34,6 @@ https://nextjs.org/docs/app/building-your-application/routing
 | [Tailwind](https://tailwindcss.com/)                                                   | CSS Framework                         |         |                                                    |
 
 to start
-
 ```
 $ npm install		// download and update dependencies
 $ npm run dev
