@@ -22,7 +22,6 @@ E-commerce-react
 Next js 13 to 14 change routing from pages/index.tsx to src/app/page.tsx
 https://nextjs.org/docs/app/building-your-application/routing
 
-
 ``` 
 ### Tech stack
 | Tech                                                                                   | role                                  | version | How is it being used here                               |
