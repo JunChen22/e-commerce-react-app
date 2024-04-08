@@ -40,17 +40,6 @@ npm prune
 
 rm -rf node_modules
 
-
-AWS
-next js with typescript
-spring boot
-leet code
-read the byte book
-
-
-
-might add a total or incart boolean in cart item table
-
 emmet balance outward
 control + m
 
