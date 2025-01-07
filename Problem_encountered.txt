@@ -1,0 +1,15 @@
+Q: getting error in frontend
+    "Error: NetworkError when attempting to fetch resource."
+
+A: it's CORS issue, need to add CORS configuration in the backend.
+    in global, you can change it in security config
+    or in controller level, you can use @CrossOrigin annotation.
+    @CrossOrigin(origins = "http://localhost:3000")  // assuming your Next.js runs on port 3000
+
+
+
+Q: changes made to backend and the data not changing while postman getting the right data.
+
+A: it's been cached in next js. check .next folder. ./.next/cache/fetch-cache
+
+  can delete it or use { cache: 'no-store' }) in development while fetching.
