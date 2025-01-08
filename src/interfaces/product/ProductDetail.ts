@@ -1,24 +1,13 @@
-import { SkuVariant } from './SkuVariant';
-import { Picture } from './Picture';
-import { Attribute } from './Attribute'; 
+import { ProductDTO } from './ProductDTO';
+import { ProductSkuDTO } from './ProductSkuDTO';
+import { ProductAttributeDTO } from './ProductAttributeDTO';
+import { SkuBulletPointDTO } from './SkuBulletPointDTO';
 
 export interface ProductDetail {
-  brandName: string;
-  name: string;
-  categoryName: string;
-  sn: string;
-  subTitle: string;
-  coverPicture: string;
-  description: string;
-  originalPrice: number;
-  salePrice: number;
-  stock: number;
-  weight: number;
-  keywords: string;
-  detailTitle: string;
-  detailDesc: string;
-  createdAt: string;
-  skuVariants: SkuVariant[];
-  picturesList: Picture[];
-  attributes: Attribute;
+  product: ProductDTO;
+  selectedSku: ProductSkuDTO;
+  otherSkus: ProductSkuDTO[];
+  pictures: string[];
+  attributes: ProductAttributeDTO[];
+  bulletPoints: SkuBulletPointDTO[];
 }

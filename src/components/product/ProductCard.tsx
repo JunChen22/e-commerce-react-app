@@ -1,4 +1,4 @@
-import { ProductListingDTO } from '@/interfaces/ProductListing';
+import { ProductListingDTO } from '@/interfaces/product/ProductListing';
 
 type ProductCardProps = {
   product: ProductListingDTO;

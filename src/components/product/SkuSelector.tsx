@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ProductSkuDTO } from '@/interfaces/Product';
+import { ProductSkuDTO } from '@/interfaces/product/ProductSkuDTO';
 
 export default function SkuSelector({
   selectedSku,

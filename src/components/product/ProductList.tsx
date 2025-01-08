@@ -1,4 +1,4 @@
-import { ProductListingDTO } from '@/interfaces/ProductListing';
+import { ProductListingDTO } from '@/interfaces/product/ProductListing';
 import Link from 'next/link';
 
 type ProductListProps = {

@@ -3,6 +3,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper"
 import { Icons } from "./Icon"
 import NavItems from "./NavItems"
 import Cart from "./Cart"
+import SearchBar from "./SearchBar"
 
 const Navbar = () => {
     return (
@@ -17,6 +18,11 @@ const Navbar = () => {
                                 <Link href='/'>
                                     <Icons.logo className='h-10 w-10' />
                                 </Link>
+                            </div>
+
+                            <div className="flex items-center gap-4">
+                                <SearchBar />
+                                {/* Other header items */}
                             </div>
 
                             <div className='hidden z-50 lg:ml-8 lg:block lg:self-stretch'>

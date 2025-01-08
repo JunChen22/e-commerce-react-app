@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ProductListingDTO } from '@/interfaces/ProductListing';
-import { productApi } from '@/services/api';
+import { ProductListingDTO } from '@/interfaces/product/ProductListing';
+import { productApi } from '@/services/productService';
 
 export function useProducts() {
   const [products, setProducts] = useState<ProductListingDTO[]>([]);

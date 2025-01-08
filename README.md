@@ -37,6 +37,11 @@ to start
 ```
 $ export PATH=/usr/local/node/bin:$PATH
 $ npm install		// download and update dependencies
+$ rm -rf .next
 $ npm run dev
 * there's a required command list to download all the necessary dependencies.
 ```
+
+rm -rf .next
+npm run build
+npm start

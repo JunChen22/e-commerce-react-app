@@ -1,7 +1,7 @@
 'use client';
 
 import { useProducts } from '@/hooks/useProducts';
-import ProductList from '@/components/ProductList';
+import ProductList from '@/components/product/ProductList';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorMessage from '@/components/ErrorMessage';
 

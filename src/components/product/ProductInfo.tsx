@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { ProductSkuDTO, ProductAttributeDTO, SkuBulletPointDTO } from '@/types/product';
+import { ProductSkuDTO } from '@/interfaces/product/ProductSkuDTO';
+import { ProductAttributeDTO } from '@/interfaces/product/ProductAttributeDTO';
+import { SkuBulletPointDTO } from '@/interfaces/product/SkuBulletPointDTO';
 
 export default function ProductInfo({
   selectedSku,
@@ -34,6 +36,8 @@ export default function ProductInfo({
 
   return (
     <div className="space-y-6">
+      
+      {/* Product price */}
       <div>
         <div className="flex items-baseline">
           <span className="text-3xl font-bold">${selectedSku.promotionPrice}</span>
@@ -44,7 +48,8 @@ export default function ProductInfo({
           )}
         </div>
       </div>
-
+        
+      {/* Add to Cart button */}
       <div className="flex gap-4 items-center">
         <label className="flex items-center gap-2">
           Quantity:
@@ -67,7 +72,7 @@ export default function ProductInfo({
         </button>
       </div>
 
-      {/* Rest of the component remains the same */}
+      {/* Key features */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold">Key Features</h3>
         <ul className="list-disc pl-5 space-y-2">
@@ -79,6 +84,7 @@ export default function ProductInfo({
         </ul>
       </div>
 
+      {/* Specifications */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold">Specifications</h3>
         <div className="grid grid-cols-2 gap-4">
