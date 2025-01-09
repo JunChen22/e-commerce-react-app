@@ -1,7 +1,6 @@
 import { brandApi } from '@/services/brandService';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import { BrandDTO } from '@/interfaces/brand/BrandDTO';
 
 // Loading component within the same file for direct usage
 function BrandGridSkeleton() {

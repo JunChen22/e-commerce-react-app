@@ -35,7 +35,9 @@ export default function SearchBar() {
 
       setIsLoading(true);
       try {
-        const results = await searchService.getSearchSuggestions(keyword);
+        const results = await searchService.search(keyword);
+        console.log(results);
+        console.log('asd');
         setSuggestions(results);
       } catch (error) {
         console.error('Search error:', error);
@@ -87,7 +89,7 @@ export default function SearchBar() {
               {suggestions.map((product) => (
                 <Link
                   key={product.skuCode}
-                  href={`/${product.slug}/${product.skuCode}`}
+                  href={`/product/${product.slug}/${product.skuCode}`}
                   className="flex items-center gap-4 p-3 hover:bg-gray-100 transition-colors"
                   onClick={() => setShowSuggestions(false)}
                 >

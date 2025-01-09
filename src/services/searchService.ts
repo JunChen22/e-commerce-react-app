@@ -3,6 +3,8 @@ import { ProductListingDTO } from '@/interfaces/product/ProductListing';
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const searchService = {
+
+  // 
   async search(keyword: string): Promise<ProductListingDTO[]> {
     try {
       const response = await fetch(`${API_URL}/search?keyword=${encodeURIComponent(keyword)}`);

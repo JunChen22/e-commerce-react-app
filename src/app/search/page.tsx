@@ -1,11 +1,5 @@
-import { ProductListingDTO } from '@/interfaces/product/ProductListing';
 import Link from 'next/link';
-
-async function getSearchResults(query: string): Promise<ProductListingDTO[]> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/search?keyword=${encodeURIComponent(query)}`);
-  if (!response.ok) throw new Error('Search failed');
-  return response.json();
-}
+import {searchService} from '@/services/searchService'
 
 export default async function SearchPage({
   searchParams
@@ -13,7 +7,7 @@ export default async function SearchPage({
   searchParams: { q: string }
 }) {
   const query = searchParams.q;
-  const products = await getSearchResults(query);
+  const products = await searchService.search(query);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -27,7 +21,7 @@ export default async function SearchPage({
           {products.map((product) => (
             <Link
               key={product.skuCode}
-              href={`/${product.slug}/${product.skuCode}`}
+              href={`/product/${product.slug}/${product.skuCode}`}
               className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-4"
             >
               <div className="aspect-square mb-4">

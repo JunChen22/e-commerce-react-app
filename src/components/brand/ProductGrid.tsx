@@ -6,7 +6,7 @@ export default function ProductGrid({ products }: { products: ProductListingDTO[
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {products.map((product) => (
         <Link
-          href={`/${product.slug}/${product.skuCode}`}
+          href={`/product/${product.slug}/${product.skuCode}`}
           key={product.skuCode}
           className="group"
         >
