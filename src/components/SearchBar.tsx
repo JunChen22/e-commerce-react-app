@@ -1,8 +1,7 @@
 'use client';
-
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { ProductListingDTO } from '@/interfaces/product/ProductListing';
+import { ProductListing } from '@/interfaces/product/ProductListing';
 import { Search } from 'lucide-react';
 import Link from 'next/link';
 import { searchService } from '@/services/searchService';
@@ -11,7 +10,7 @@ export default function SearchBar() {
   const router = useRouter();
   const [keyword, setKeyword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [suggestions, setSuggestions] = useState<ProductListingDTO[]>([]);
+  const [suggestions, setSuggestions] = useState<ProductListing[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 

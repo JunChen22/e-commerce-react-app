@@ -1,5 +1,4 @@
 'use client';
-
 import { useProducts } from '@/hooks/useProducts';
 import ProductList from '@/components/product/ProductList';
 import LoadingSpinner from '@/components/LoadingSpinner';

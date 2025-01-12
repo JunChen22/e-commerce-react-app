@@ -17,7 +17,7 @@ export default function ProductInfo({
 
   const addToCart = async () => {
     try {
-      const response = await fetch('/api/cart', {
+      const response = await fetch('/cart/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

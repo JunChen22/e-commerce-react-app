@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ProductListingDTO } from '@/interfaces/product/ProductListing';
-import { productApi } from '@/services/productService';
+import { ProductListing } from '@/interfaces/product/ProductListing';
+import { productService } from '@/services/productService';
 
 export function useProducts() {
-  const [products, setProducts] = useState<ProductListingDTO[]>([]);
+  const [products, setProducts] = useState<ProductListing[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -11,7 +11,7 @@ export function useProducts() {
     try {
       setIsLoading(true);
       setError(null);
-      const data = await productApi.getAllProducts();
+      const data = await productService.getAllProducts();
       setProducts(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');

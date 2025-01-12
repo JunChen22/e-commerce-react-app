@@ -1,4 +1,4 @@
-export interface ProductListingDTO {
+export interface ProductListing {
   name: string;
   slug: string;
   skuCode: string;

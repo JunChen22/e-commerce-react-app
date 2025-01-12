@@ -1,4 +1,4 @@
-import { brandApi } from '@/services/brandService';
+import { brandService } from '@/services/brandService';
 import ProductGrid from '@/components/brand/ProductGrid';
 import BrandHeader from '@/components/brand/BrandHeader';
 import { Suspense } from 'react';
@@ -8,7 +8,7 @@ export default async function BrandPage({
   }: {
     params: { brandSlug: string };
   }) {
-    const { brand, products } = await brandApi.getBrandProduct(brandSlug);
+    const { brand, products } = await brandService.getBrandProduct(brandSlug);
   
     return (
       <div className="min-h-screen bg-gray-50">

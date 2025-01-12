@@ -1,4 +1,4 @@
-import { brandApi } from '@/services/brandService';
+import { brandService } from '@/services/brandService';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -17,7 +17,7 @@ function BrandGridSkeleton() {
 }
 
 async function BrandGrid() {
-  const brands = await brandApi.getAllBrand();
+  const brands = await brandService.getAllBrand();
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

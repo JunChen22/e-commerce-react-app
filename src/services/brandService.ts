@@ -3,7 +3,7 @@ import { BrandProduct } from '@/interfaces/brand/BrandProduct';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export const brandApi = {
+export const brandService = {
 
     // Fetch all brand
     async getAllBrand(): Promise<BrandDTO[]> {

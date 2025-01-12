@@ -1,8 +1,8 @@
-import { ProductListingDTO } from '@/interfaces/product/ProductListing';
+import { ProductListing } from '@/interfaces/product/ProductListing';
 import Link from 'next/link';
 
 type ProductListProps = {
-  products: ProductListingDTO[];
+  products: ProductListing[];
 };
 
 export default function ProductList({ products = [] }: ProductListProps) {

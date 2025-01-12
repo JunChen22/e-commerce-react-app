@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { ProductListingDTO } from '@/interfaces/product/ProductListing';
+import { ProductListing } from '@/interfaces/product/ProductListing';
 
-export default function ProductGrid({ products }: { products: ProductListingDTO[] }) {
+export default function ProductGrid({ products }: { products: ProductListing[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {products.map((product) => (

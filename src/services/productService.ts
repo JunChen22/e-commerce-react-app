@@ -1,12 +1,12 @@
-import { ProductListingDTO } from '@/interfaces/product/ProductListing';
+import { ProductListing } from '@/interfaces/product/ProductListing';
 import { ProductDetail } from '@/interfaces/product/ProductDetail';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export const productApi = {
+export const productService = {
 
     // Fetch all product listing
-    async getAllProducts(): Promise<ProductListingDTO[]> {
+    async getAllProducts(): Promise<ProductListing[]> {
         const response = await fetch(`${API_URL}/product/listAll`);
         if (!response.ok) {
             throw new Error('Failed to fetch products');
@@ -15,7 +15,7 @@ export const productApi = {
     },
 
     // Fetch all products with pagination
-    async getAllProductsWithPagination(page: number, size: number): Promise<ProductListingDTO[]> {
+    async getAllProductsWithPagination(page: number, size: number): Promise<ProductListing[]> {
         const response = await fetch(`${API_URL}/product/list?page=${page}&size=${size}`);
         if (!response.ok) {
             throw new Error('Failed to fetch products with pagination');

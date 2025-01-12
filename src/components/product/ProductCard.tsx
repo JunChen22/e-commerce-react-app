@@ -1,7 +1,7 @@
-import { ProductListingDTO } from '@/interfaces/product/ProductListing';
+import { ProductListing } from '@/interfaces/product/ProductListing';
 
 type ProductCardProps = {
-  product: ProductListingDTO;
+  product: ProductListing;
 };
 
 export default function ProductCard({ product }: ProductCardProps) {

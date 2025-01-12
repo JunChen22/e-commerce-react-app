@@ -1,0 +1,60 @@
+import Link from 'next/link';
+import { ProductListing } from '@/interfaces/product/ProductListing'
+
+export default function ProductGrid({ products }: { products: ProductListing[] }) {
+    return (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <Link
+            key={product.skuCode}
+            href={`/product/${product.slug}/${product.skuCode}`}
+            className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-4"
+          >
+            <div className="aspect-square mb-4">
+              <img
+                src={product.imageUrl}
+                alt={product.name}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            
+            <h2 className="text-sm font-medium line-clamp-2 mb-2">
+              {product.name}
+            </h2>
+            
+            <div className="flex items-center mb-2">
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <span
+                    key={i}
+                    className={`text-sm ${
+                      i < Math.floor(product.stars)
+                        ? 'text-yellow-400'
+                        : 'text-gray-300'
+                    }`}
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
+              <span className="ml-1 text-xs text-gray-500">
+                ({product.ratings})
+              </span>
+            </div>
+            
+            <div className="flex items-baseline gap-2">
+              <span className="text-lg font-bold text-amber-600">
+                ${product.originalPrice}
+              </span>
+              {product.listPrice > product.originalPrice && (
+                <span className="text-sm text-gray-500 line-through">
+                  ${product.listPrice}
+                </span>
+              )}
+            </div>
+          </Link>
+        ))}
+      </div>
+    );
+  }
+  
