@@ -11,7 +11,14 @@ export default async function ProductDetailPage({
   params: { slug: string; skuCode: string };
 }) {
   const productDetail = await productService.getProductDetail(slug, skuCode);
-  const { product, selectedSku, categoryPath, otherSkus, pictures, attributes, bulletPoints } = productDetail;
+  const { product, selectedSku, categoryPath, otherSkus, pictures, attributes, bulletPoints, salesStatus } = productDetail;
+
+  // Log the optional salesStatus
+  if (salesStatus) {
+    console.log(productDetail.salesStatus?.startDateTime);
+  } else {
+    console.log("No sales status available for this product.");
+  }
 
   return (
     <div>
@@ -51,6 +58,7 @@ export default async function ProductDetailPage({
               selectedSku={selectedSku}
               attributes={attributes}
               bulletPoints={bulletPoints}
+              salesStatus={salesStatus}
             />
 
             <SkuSelector 

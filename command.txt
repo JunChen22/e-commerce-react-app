@@ -30,45 +30,52 @@ Would you like to customize the default import alias (@/*)? No
 What import alias would you like configured? @/*
 
 # add shadcn-ui and its components
-$ npx shadcn-ui@latest init
+# shadcn-ui library changed to just shadcn
+
+$ npm install -g shadcn
+$ npx shadcn@latest init
 
 # add lucide-react, the icon
 $ npx add lucide-react
 
 ``` // other components that I might want
-npx shadcn-ui@latest add dialog
-npx shadcn-ui@latest add accordion
-npx shadcn-ui@latest add alert
-npx shadcn-ui@latest add avatar
-npx shadcn-ui@latest add badge
-npx shadcn-ui@latest add dropdown-menu
-npx shadcn-ui@latest add hover-card
-npx shadcn-ui@latest add input
-npx shadcn-ui@latest add label
-npx shadcn-ui@latest add menubar
-npx shadcn-ui@latest add pagination
-npx shadcn-ui@latest add popover
-npx shadcn-ui@latest add progress
-npx shadcn-ui@latest add radio-group
-npx shadcn-ui@latest add scroll-area
-npx shadcn-ui@latest add select
-npx shadcn-ui@latest add separator
-npx shadcn-ui@latest add sheet
-npx shadcn-ui@latest add skeleton
-npx shadcn-ui@latest add sonner
-npx shadcn-ui@latest add switch
-npx shadcn-ui@latest add table
-npx shadcn-ui@latest add tabs
-npx shadcn-ui@latest add textarea
-npx shadcn-ui@latest add toast
-npx shadcn-ui@latest add tooltip
-npx shadcn-ui@latest add card
-npx shadcn-ui@latest add carousel
-npx shadcn-ui@latest add checkbox
-npx shadcn-ui@latest add command
-npx shadcn-ui@latest add context-menu
-npx shadcn-ui@latest add alert-dialog	// also includes button
-npx shadcn-ui@latest add button
+npx shadcn@latest add dialog
+npx shadcn@latest add accordion
+npx shadcn@latest add alert
+npx shadcn@latest add avatar
+npx shadcn@latest add badge
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add hover-card
+npx shadcn@latest add input
+npx shadcn@latest add label
+npx shadcn@latest add menubar
+npx shadcn@latest add pagination
+npx shadcn@latest add popover
+npx shadcn@latest add progress
+npx shadcn@latest add radio-group
+npx shadcn@latest add scroll-area
+npx shadcn@latest add select
+npx shadcn@latest add separator
+npx shadcn@latest add sheet
+npx shadcn@latest add skeleton
+npx shadcn@latest add sonner
+npx shadcn@latest add switch
+npx shadcn@latest add table
+npx shadcn@latest add tabs
+npx shadcn@latest add textarea
+npx shadcn@latest add toast
+npx shadcn@latest add tooltip
+npx shadcn@latest add card
+npx shadcn@latest add carousel
+npx shadcn@latest add checkbox
+npx shadcn@latest add command
+npx shadcn@latest add context-menu
+npx shadcn@latest add alert-dialog	// also includes button
+npx shadcn@latest add button
+
+
+npx shadcn@latest add alert progress
+
 
 // combination
 combobox = Popover + Command   https://ui.shadcn.com/docs/components/combobox

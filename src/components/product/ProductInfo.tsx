@@ -3,15 +3,20 @@ import { useState } from 'react';
 import { ProductSkuDTO } from '@/interfaces/product/ProductSkuDTO';
 import { ProductAttributeDTO } from '@/interfaces/product/ProductAttributeDTO';
 import { SkuBulletPointDTO } from '@/interfaces/product/SkuBulletPointDTO';
+import { SalesStatusDTO } from '@/interfaces/product/SalesStatusDTO';
+import FlashSale from '@/components/product/FlashSale'
+import { ShoppingCart } from 'lucide-react';
 
 export default function ProductInfo({
   selectedSku,
   attributes,
-  bulletPoints
+  bulletPoints,
+  salesStatus
 }: {
   selectedSku: ProductSkuDTO;
   attributes: ProductAttributeDTO[];
   bulletPoints: SkuBulletPointDTO[];
+  salesStatus?: SalesStatusDTO;
 }) {
   const [quantity, setQuantity] = useState(1);
 
@@ -48,8 +53,16 @@ export default function ProductInfo({
           )}
         </div>
       </div>
-        
+
+      {/* Flash Sale Component */}
+      {salesStatus && (
+      <div className="mb-4">
+        <FlashSale salesStatus={salesStatus} />
+      </div>
+)}
+
       {/* Add to Cart button */}
+      {/* < className="h-5 w-5" /> */}
       <div className="flex gap-4 items-center">
         <label className="flex items-center gap-2">
           Quantity:
@@ -66,9 +79,10 @@ export default function ProductInfo({
         
         <button
           onClick={addToCart}
-          className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
+          className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2 text-white transition-transform hover:scale-105 active:scale-95"
         >
-          Add to Cart
+          <ShoppingCart className="h-5 w-5" />
+          <span>Add to Cart</span>
         </button>
       </div>
 

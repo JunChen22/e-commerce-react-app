@@ -41,12 +41,12 @@ const Cart = () => {
 
                             <div className='flex'>
                                 <span className='flex-1'> taxes</span>
-                                <span> {formatPrice(taxes)} </span>
+                                {/* <span> {formatPrice(taxes)} </span> */}
                             </div>
 
                             <div className='flex'>
                                 <span className='flex-1'> Total</span>
-                                <span> {formatPrice(cartTotal)} </span>
+                                {/* <span> {formatPrice(cartTotal)} </span> */}
                             </div>
                         </div>
 
