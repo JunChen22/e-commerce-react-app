@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
-
-
 export default function CategoryBreadcrumb({ categoryPath }: { categoryPath: string }) {
   const categories = categoryPath.split('/').filter(Boolean); // Split and filter empty parts
 

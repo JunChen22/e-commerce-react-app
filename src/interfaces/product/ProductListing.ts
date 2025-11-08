@@ -4,7 +4,7 @@ export interface ProductListing {
   skuCode: string;
   stars: number;
   ratings: number;
-  originalPrice: number;  // TypeScript doesn't have a BigDecimal type, so we'll use number
-  listPrice: number;      // Same here, using number instead of BigDecimal
+  originalPrice: number;
+  listPrice: number;
   imageUrl: string;
 }

@@ -4,6 +4,7 @@ import SkuSelector from '@/components/product/SkuSelector';
 import Link from 'next/link';
 import { productService } from '@/services/productService';
 import CategoryBreadcrumb from '@/components/product/CategoryBreadcrumb'
+import ProductDescription from "@/components/product/ProductDescription";
 
 export default async function ProductDetailPage({
   params: { slug, skuCode }
@@ -11,7 +12,7 @@ export default async function ProductDetailPage({
   params: { slug: string; skuCode: string };
 }) {
   const productDetail = await productService.getProductDetail(slug, skuCode);
-  const { product, selectedSku, categoryPath, otherSkus, pictures, attributes, bulletPoints, salesStatus } = productDetail;
+  const { product, selectedSku, categoryPath, otherSkus, medias, attributes, bulletPoints, salesStatus } = productDetail;
 
   // Log the optional salesStatus
   if (salesStatus) {
@@ -25,7 +26,7 @@ export default async function ProductDetailPage({
       <CategoryBreadcrumb categoryPath={categoryPath} />
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ProductGallery pictures={pictures} />
+          <ProductGallery medias={medias} />
           <div className="space-y-6">
             <div>
               <h1 className="text-2xl font-bold">{selectedSku.skuName}</h1>
@@ -69,6 +70,7 @@ export default async function ProductDetailPage({
           </div>
         </div>
       </div>
+        <ProductDescription slug={product.slug} />
     </div>
   );
 }

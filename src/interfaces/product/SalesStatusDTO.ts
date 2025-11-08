@@ -1,6 +1,6 @@
 export interface SalesStatusDTO {
     saleName: string;
-    status: string;
+    status: 'UPCOMING' | 'ACTIVE' | 'ENDED';
     numberSold: number;
     numberAvailable: number;
     startDateTime: string;

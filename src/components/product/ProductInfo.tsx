@@ -18,9 +18,13 @@ export default function ProductInfo({
   bulletPoints: SkuBulletPointDTO[];
   salesStatus?: SalesStatusDTO;
 }) {
-  const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(1);
 
-  const addToCart = async () => {
+    const sortedBulletPoints = [...bulletPoints].sort(
+        (a, b) => (a.orderIndex ?? 0) - (b.orderIndex ?? 0)
+    );
+
+    const addToCart = async () => {
     try {
       const response = await fetch('/cart/add', {
         method: 'POST',
@@ -56,10 +60,10 @@ export default function ProductInfo({
 
       {/* Flash Sale Component */}
       {salesStatus && (
-      <div className="mb-4">
-        <FlashSale salesStatus={salesStatus} />
-      </div>
-)}
+        <div className="mb-4">
+          <FlashSale salesStatus={salesStatus} />
+        </div>
+      )}
 
       {/* Add to Cart button */}
       {/* < className="h-5 w-5" /> */}

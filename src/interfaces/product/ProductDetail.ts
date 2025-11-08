@@ -3,14 +3,15 @@ import { ProductSkuDTO } from './ProductSkuDTO';
 import { ProductAttributeDTO } from './ProductAttributeDTO';
 import { SkuBulletPointDTO } from './SkuBulletPointDTO';
 import { SalesStatusDTO } from './SalesStatusDTO';
+import { MediaDTO } from "@/interfaces/image/MediaDTO";
 
 export interface ProductDetail {
   product: ProductDTO;
   selectedSku: ProductSkuDTO;
   categoryPath: string;
   otherSkus: ProductSkuDTO[];
-  pictures: string[];
+  medias: MediaDTO[];
   attributes: ProductAttributeDTO[];
   bulletPoints: SkuBulletPointDTO[];
-  salesStatus?: SalesStatusDTO;     // optinal sales status for flash sales
+  salesStatus?: SalesStatusDTO;     // optional sales status for flash sales
 }

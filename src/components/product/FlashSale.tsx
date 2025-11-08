@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Timer, Zap, Package } from 'lucide-react';
-// import { SalesStatusDTO } from '@/interfaces/product/SalesStatusDTO'
-
-
-export interface SalesStatusDTO {
-  saleName: string;
-  status: 'Active' | 'UPCOMING' | 'Ended';
-  numberSold: number;
-  numberAvailable: number;
-  startDateTime: string;
-  endDateTime: string;
-  limitPerUser: number;
-}
+import { SalesStatusDTO } from '@/interfaces/product/SalesStatusDTO'
 
 interface FlashSaleProps {
   salesStatus: SalesStatusDTO;
@@ -19,7 +8,7 @@ interface FlashSaleProps {
 
 const FlashSale = ({ salesStatus }: FlashSaleProps) => {
   const [timeLeft, setTimeLeft] = useState<{ hours: number; minutes: number; seconds: number }>({ hours: 0, minutes: 0, seconds: 0 });
-  const [currentStatus, setCurrentStatus] = useState<'Active' | 'UPCOMING' | 'Ended'>(salesStatus.status);
+  const [currentStatus, setCurrentStatus] = useState<'UPCOMING' | 'ACTIVE' | 'ENDED'>(salesStatus.status);
 
   useEffect(() => {
       const calculateTimeLeft = () => {
@@ -35,19 +24,19 @@ const FlashSale = ({ salesStatus }: FlashSaleProps) => {
                   hours: Math.floor((timeDiff / (1000 * 60 * 60))),
                   minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),
                   seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)
-              };
+          };
           } else if (now >= startTime && now <= endTime) {
               // Active sale
               const timeDiff = endTime - now;
-              setCurrentStatus('Active');
+              setCurrentStatus('ACTIVE');
               return {
                   hours: Math.floor((timeDiff / (1000 * 60 * 60))),
                   minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),
                   seconds: Math.floor((timeDiff % (1000 * 60)) / 1000)
               };
           } else {
-              // Ended sale
-              setCurrentStatus('Ended');
+              // ENDED sale
+              setCurrentStatus('ENDED');
               return { hours: 0, minutes: 0, seconds: 0 };
           }
       };
@@ -69,14 +58,14 @@ const FlashSale = ({ salesStatus }: FlashSaleProps) => {
                   progressBg: 'bg-blue-200',
                   progressFill: 'from-blue-500 to-blue-700'
               };
-          case 'Ended':
+          case 'ENDED':
               return {
                   bgGradient: 'from-gray-50 to-gray-100',
                   headerGradient: 'from-gray-600 to-gray-800',
                   progressBg: 'bg-gray-200',
                   progressFill: 'from-gray-500 to-gray-700'
               };
-          default: // Active
+          default: // ACTIVE
               return {
                   bgGradient: 'from-red-50 to-orange-50',
                   headerGradient: 'from-red-600 to-orange-600',
@@ -103,13 +92,13 @@ const FlashSale = ({ salesStatus }: FlashSaleProps) => {
                       {String(timeLeft.seconds).padStart(2, '0')}
                   </div>
               );
-          case 'Ended':
+          case 'ENDED':
               return (
                   <div className="text-gray-600 font-medium">
-                      Sale Has Ended
+                      Sale Has ended
                   </div>
               );
-          default: // Active
+          default: // ACTIVE
               return (
                   <>
                       <div className="flex items-center justify-between text-sm">
@@ -155,7 +144,7 @@ const FlashSale = ({ salesStatus }: FlashSaleProps) => {
           <div className="p-4 space-y-3">
               {renderStatusContent()}
 
-              {currentStatus === 'Active' && (
+              {currentStatus === 'ACTIVE' && (
                   <div className="flex justify-between text-sm text-gray-600">
                       <span className="font-medium">Limit {salesStatus.limitPerUser} items per customer</span>
                       <span>{salesStatus.numberSold} sold</span>
@@ -165,6 +154,11 @@ const FlashSale = ({ salesStatus }: FlashSaleProps) => {
 
           {/* Corner Flash */}
           <div className="absolute -right-12 -top-12 h-24 w-24 rotate-45 bg-yellow-400 opacity-50" />
+
+          {/* {currentStatus === 'ENDED' && (
+            <div className="absolute -right-12 -top-12 h-24 w-24 rotate-45 bg-gray-400 opacity-90 flex items-center justify-center">
+                <span className="text-white font-bold text-sm transform -rotate-45">ENDED</span>
+            </div>)} */}
       </div>
   );
 };

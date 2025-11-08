@@ -4,7 +4,6 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const searchService = {
 
-  // 
   async search(keyword: string): Promise<ProductListing[]> {
     try {
       const response = await fetch(`${API_URL}/search?keyword=${encodeURIComponent(keyword)}`);
