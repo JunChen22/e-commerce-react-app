@@ -1,6 +1,6 @@
 import {MediaType} from "@/enum/MediaTypeEnum";
 
-export interface MediaDTO {
+export interface Media {
     mediaType: MediaType;
     previewUrl: string;
     url: string;

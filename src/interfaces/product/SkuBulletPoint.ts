@@ -1,4 +1,4 @@
-export interface SkuBulletPointDTO {
+export interface SkuBulletPoint {
     bulletPoint: string;
     orderIndex: number;
 }

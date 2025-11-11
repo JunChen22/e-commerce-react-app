@@ -23,15 +23,15 @@ Next js 13 to 14 change routing from pages/index.tsx to src/app/page.tsx
 https://nextjs.org/docs/app/building-your-application/routing
 ``` 
 ### Tech stack
-| Tech                                                                                   | role                                  | version | How is it being used here                               |
-|----------------------------------------------------------------------------------------|---------------------------------------|---------|---------------------------------------------------------|
-| [React.js](https://react.dev/)                                                         | JavaScript library                    | 18.0.0  |                                                         |
-| [Next.js](https://nextjs.org/)                                                         | React js framework                    | 14.0.0  |                                                         |
-| [TypeScript](https://www.typescriptlang.org/)                                          | Typed Code                            | 5.0.0   |                                                         |
-| [Node.js](https://nodejs.org/en/download)                                              | Package Management                    | 20.10.0 | Download dependencies and start project                 |
-| [Shadcn-UI](https://ui.shadcn.com/)                                                    | UI components                         |         | pre-defined UI components                               |
-| [Lucide](https://lucide.dev)                                                           | Icons                                 | 0.303.0 | Icons                                                   |
-| [Tailwind](https://tailwindcss.com/)                                                   | CSS Framework                         |         |                                                    |
+| Tech                                                       |                 role                  | version | How is it being used here                               |
+|------------------------------------------------------------|:-------------------------------------:|---------|:--------------------------------------------------------|
+| [React.js](https://react.dev/)                             |          JavaScript library           | 18.0.0  |                                                         |
+| [Next.js](https://nextjs.org/)                             |          React js framework           | 14.0.0  |                                                         |
+| [TypeScript](https://www.typescriptlang.org/)              |              Typed Code               | 5.0.0   |                                                         |
+| [Node.js](https://nodejs.org/en/download)                  |          Package Management           | 20.10.0 | Download dependencies and start project                 |
+| [Shadcn-UI](https://ui.shadcn.com/)                        |             UI components             |         | pre-defined UI components                               |
+| [Lucide](https://lucide.dev)                               |                 Icons                 | 0.303.0 | Icons                                                   |
+| [Tailwind](https://tailwindcss.com/)                       |             CSS Framework             |         |                                                    |
 
 to start
 ```

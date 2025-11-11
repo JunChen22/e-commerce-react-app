@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { ProductSkuDTO } from '@/interfaces/product/ProductSkuDTO';
+import { ProductSku } from '@/interfaces/product/ProductSku';
 
 export default function SkuSelector({
   selectedSku,
   otherSkus,
   slug
 }: {
-  selectedSku: ProductSkuDTO;
-  otherSkus: ProductSkuDTO[];
+  selectedSku: ProductSku;
+  otherSkus: ProductSku[];
   slug: string;
 }) {
   // Check if there's more than one option (selectedSku + otherSkus)

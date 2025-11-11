@@ -1,7 +1,7 @@
-import { BrandDTO } from './BrandDTO';
+import { Brand } from './Brand';
 import { ProductListing } from '../product/ProductListing';
 
 export interface BrandProduct {
-  brand: BrandDTO;
-  products: ProductListing[];
+    brand: Brand;
+    products: ProductListing[];
 }

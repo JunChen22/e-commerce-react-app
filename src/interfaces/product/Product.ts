@@ -1,4 +1,4 @@
-export interface ProductDTO {
+export interface Product {
     brandName: string;
     brandSlug: string;
     name: string;

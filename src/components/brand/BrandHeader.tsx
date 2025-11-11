@@ -1,7 +1,7 @@
 // app/brand/[brandSlug]/components/BrandHeader.tsx
-import { BrandDTO } from '@/interfaces/brand/BrandDTO';
+import { Brand } from '@/interfaces/brand/Brand';
 
-export default function BrandHeader({ brand }: { brand: BrandDTO }) {
+export default function BrandHeader({ brand }: { brand: Brand }) {
   return (
     <div className="bg-white border-b">
       <div className="container mx-auto px-4 py-6">

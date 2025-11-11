@@ -1,4 +1,4 @@
-export interface SalesStatusDTO {
+export interface SalesStatus {
     saleName: string;
     status: 'UPCOMING' | 'ACTIVE' | 'ENDED';
     numberSold: number;

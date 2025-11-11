@@ -1,4 +1,4 @@
-export interface CategoryDTO {
+export interface Category {
     name: string;
     slug: string;
     slugPath: string;

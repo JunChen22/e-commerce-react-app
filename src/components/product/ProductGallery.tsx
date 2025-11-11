@@ -1,8 +1,8 @@
 'use client';
 import  React, { useState } from 'react';
-import type { MediaDTO } from "@/interfaces/image/MediaDTO";
+import type { Media } from "@/interfaces/image/Media";
 
-export default function ProductGallery({ medias }: { medias: MediaDTO[] }) {
+export default function ProductGallery({ medias }: { medias: Media[] }) {
     const safeMedias = Array.isArray(medias) ? medias : [];
 
     const [selected, setSelected] = useState(0);

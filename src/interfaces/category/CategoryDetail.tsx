@@ -1,6 +1,6 @@
-import { CategoryDTO } from '@/interfaces/category/CategoryDTO'
+import { Category } from '@/interfaces/category/Category'
 
 export interface CategoryDetail {
     categoryName: string;
-    subCategories: CategoryDTO[];
+    subCategories: Category[];
 }

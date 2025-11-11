@@ -1,6 +1,6 @@
-import { CategoryDTO } from '@/interfaces/category/CategoryDTO'
+import { Category } from '@/interfaces/category/Category'
 
-export default function CategoryHeader({ category }: { category: CategoryDTO }) {
+export default function CategoryHeader({ category }: { category: Category }) {
     return (
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-6">

@@ -1,4 +1,4 @@
-import { BrandDTO } from '@/interfaces/brand/BrandDTO';
+import { Brand } from '@/interfaces/brand/Brand';
 import { BrandProduct } from '@/interfaces/brand/BrandProduct';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL + "/brand";
@@ -6,7 +6,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL + "/brand";
 export const brandService = {
 
     // Fetch all brand
-    async getAllBrand(): Promise<BrandDTO[]> {
+    async getAllBrand(): Promise<Brand[]> {
         const response = await fetch(`${API_URL}/listAll`);
         if (!response.ok) {
             throw new Error('Failed to fetch brands');
@@ -15,7 +15,7 @@ export const brandService = {
     },
 
     // Fetch all brand with pagination
-    async getAllBrandWithPagination(page: number, size: number): Promise<BrandDTO[]> {
+    async getAllBrandWithPagination(page: number, size: number): Promise<Brand[]> {
         const response = await fetch(`${API_URL}/list?page=${page}&size=${size}`);
         if (!response.ok) {
             throw new Error('Failed to fetch brands');

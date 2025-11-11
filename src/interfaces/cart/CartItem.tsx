@@ -1,4 +1,4 @@
-export interface CartItemDTO {
+export interface CartItem {
     productName: string;
     productSku: string;
     productPic: string;

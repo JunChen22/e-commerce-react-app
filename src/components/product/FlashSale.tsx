@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Timer, Zap, Package } from 'lucide-react';
-import { SalesStatusDTO } from '@/interfaces/product/SalesStatusDTO'
+import { SalesStatus } from '@/interfaces/product/SalesStatus'
 
 interface FlashSaleProps {
-  salesStatus: SalesStatusDTO;
+  salesStatus: SalesStatus;
 }
 
 const FlashSale = ({ salesStatus }: FlashSaleProps) => {

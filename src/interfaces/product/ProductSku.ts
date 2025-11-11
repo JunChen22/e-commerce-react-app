@@ -1,4 +1,4 @@
-export interface ProductSkuDTO {
+export interface ProductSku {
     skuCode: string;
     skuName: string;
     coverPicture: string;

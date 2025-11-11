@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { productService } from '@/services/productService';
 import CategoryBreadcrumb from '@/components/product/CategoryBreadcrumb'
 import ProductDescription from "@/components/product/ProductDescription";
+import ProductReviewSection from "@/components/review/ProductReviewSection";
 
 export default async function ProductDetailPage({
   params: { slug, skuCode }
@@ -71,6 +72,7 @@ export default async function ProductDetailPage({
         </div>
       </div>
         <ProductDescription slug={product.slug} />
+        <ProductReviewSection slug={product.slug} />
     </div>
   );
 }

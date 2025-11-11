@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight, ChevronDown } from 'lucide-react';
-import { CategoryDTO } from '@/interfaces/category/CategoryDTO';
+import { Category } from '@/interfaces/category/Category';
 import { categoryService } from '@/services/categoryService';
 
 interface CategorySectionProps {
@@ -8,9 +8,9 @@ interface CategorySectionProps {
 }
 
 const CategorySection = ({ className = '' }: CategorySectionProps) => {
-  const [categories, setCategories] = useState<CategoryDTO[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
-  const [subcategories, setSubcategories] = useState<{ [key: string]: CategoryDTO[] }>({});
+  const [subcategories, setSubcategories] = useState<{ [key: string]: Category[] }>({});
   const [isLoading, setIsLoading] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {

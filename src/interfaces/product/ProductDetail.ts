@@ -1,17 +1,17 @@
-import { ProductDTO } from './ProductDTO';
-import { ProductSkuDTO } from './ProductSkuDTO';
-import { ProductAttributeDTO } from './ProductAttributeDTO';
-import { SkuBulletPointDTO } from './SkuBulletPointDTO';
-import { SalesStatusDTO } from './SalesStatusDTO';
-import { MediaDTO } from "@/interfaces/image/MediaDTO";
+import { Product } from './Product';
+import { ProductSku } from './ProductSku';
+import { ProductAttribute } from './ProductAttribute';
+import { SkuBulletPoint } from './SkuBulletPoint';
+import { SalesStatus } from './SalesStatus';
+import { Media } from "@/interfaces/image/Media";
 
 export interface ProductDetail {
-  product: ProductDTO;
-  selectedSku: ProductSkuDTO;
-  categoryPath: string;
-  otherSkus: ProductSkuDTO[];
-  medias: MediaDTO[];
-  attributes: ProductAttributeDTO[];
-  bulletPoints: SkuBulletPointDTO[];
-  salesStatus?: SalesStatusDTO;     // optional sales status for flash sales
+    product: Product;
+    selectedSku: ProductSku;
+    categoryPath: string;
+    otherSkus: ProductSku[];
+    medias: Media[];
+    attributes: ProductAttribute[];
+    bulletPoints: SkuBulletPoint[];
+    salesStatus?: SalesStatus;     // optional sales status for flash sales
 }

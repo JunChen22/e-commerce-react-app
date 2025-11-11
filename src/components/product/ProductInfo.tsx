@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
-import { ProductSkuDTO } from '@/interfaces/product/ProductSkuDTO';
-import { ProductAttributeDTO } from '@/interfaces/product/ProductAttributeDTO';
-import { SkuBulletPointDTO } from '@/interfaces/product/SkuBulletPointDTO';
-import { SalesStatusDTO } from '@/interfaces/product/SalesStatusDTO';
+import { ProductSku } from '@/interfaces/product/ProductSku';
+import { ProductAttribute } from '@/interfaces/product/ProductAttribute';
+import { SkuBulletPoint } from '@/interfaces/product/SkuBulletPoint';
+import { SalesStatus } from '@/interfaces/product/SalesStatus';
 import FlashSale from '@/components/product/FlashSale'
 import { ShoppingCart } from 'lucide-react';
 
@@ -13,10 +13,10 @@ export default function ProductInfo({
   bulletPoints,
   salesStatus
 }: {
-  selectedSku: ProductSkuDTO;
-  attributes: ProductAttributeDTO[];
-  bulletPoints: SkuBulletPointDTO[];
-  salesStatus?: SalesStatusDTO;
+  selectedSku: ProductSku;
+  attributes: ProductAttribute[];
+  bulletPoints: SkuBulletPoint[];
+  salesStatus?: SalesStatus;
 }) {
     const [quantity, setQuantity] = useState(1);
 
