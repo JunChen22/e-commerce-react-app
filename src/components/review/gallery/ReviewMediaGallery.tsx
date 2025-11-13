@@ -8,10 +8,7 @@ import {reviewService} from "@/services/reviewService";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {ReviewMediaModal} from "@/components/review/gallery/ReviewMediaModal";
 
-export function ReviewMediaGallery({
-                                       pictures,
-                                       slug,
-                                   }: {
+export function ReviewMediaGallery({pictures, slug}: {
     pictures: ReviewMedia[];
     slug: string;
 }) {
@@ -19,7 +16,7 @@ export function ReviewMediaGallery({
     const [loading, setLoading] = useState(false);
     const [openGallery, setOpenGallery] = useState(false);
     const [startIndex, setStartIndex] = useState(0);
-    const maxVisible = 6;
+    const maxVisible = 4;
 
     if (!pictures || pictures.length === 0) return null;
 
@@ -38,13 +35,24 @@ export function ReviewMediaGallery({
     const closeModal = () => setSelectedReview(null);
 
     const handlePrev = () => {
-        setStartIndex((prev) => Math.max(prev - maxVisible, 0));
+        if (startIndex === 0) {
+            // Wrap to last page - calculate how many full pages we have
+            const totalPages = Math.ceil(pictures.length / maxVisible);
+            const lastPageStart = (totalPages - 1) * maxVisible;
+            setStartIndex(lastPageStart);
+        } else {
+            setStartIndex((prev) => Math.max(prev - maxVisible, 0));
+        }
     };
 
     const handleNext = () => {
-        setStartIndex((prev) =>
-            Math.min(prev + maxVisible, Math.max(0, pictures.length - maxVisible))
-        );
+        const nextStart = startIndex + maxVisible;
+        if (nextStart >= pictures.length) {
+            // Wrap to beginning
+            setStartIndex(0);
+        } else {
+            setStartIndex(nextStart);
+        }
     };
 
     const visiblePictures = pictures.slice(startIndex, startIndex + maxVisible);
@@ -61,29 +69,15 @@ export function ReviewMediaGallery({
                 </button>
             </div>
 
-            <div className="relative">
-                {pictures.length > maxVisible && (
-                    <>
-                        {startIndex > 0 && (
-                            <button
-                                onClick={handlePrev}
-                                className="absolute -left-3 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 shadow hover:bg-white"
-                            >
-                                <ChevronLeft size={18} />
-                            </button>
-                        )}
-                        {startIndex + maxVisible < pictures.length && (
-                            <button
-                                onClick={handleNext}
-                                className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 shadow hover:bg-white"
-                            >
-                                <ChevronRight size={18} />
-                            </button>
-                        )}
-                    </>
-                )}
+            <div className="carousel-container">
+                <button
+                    onClick={handlePrev}
+                    className="arrow-button arrow-left"
+                >
+                    <ChevronLeft size={20} />
+                </button>
 
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 overflow-hidden">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
                     {visiblePictures.map((pic) => (
                         <div
                             key={`${pic.reviewId}-${pic.url}`}
@@ -99,6 +93,12 @@ export function ReviewMediaGallery({
                         </div>
                     ))}
                 </div>
+                <button
+                    onClick={handleNext}
+                    className="arrow-button arrow-right"
+                >
+                    <ChevronRight size={20} />
+                </button>
             </div>
 
             {loading && (
@@ -119,41 +119,91 @@ export function ReviewMediaGallery({
                 />
             )}
 
-        <style jsx>{`
-        .review-media-gallery {
-          margin-top: 2rem;
-        }
 
-        h3 {
-          font-size: 1.1rem;
-          margin-bottom: 0.5rem;
-        }
+            <style jsx>{`
+                .review-media-gallery {
+                    margin-top: 2rem;
+                }
 
-        .gallery-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-          gap: 8px;
-        }
+                h3 {
+                    font-size: 1.1rem;
+                    margin-bottom: 0.5rem;
+                }
 
-        .image-wrapper {
-          aspect-ratio: 1;
-          border-radius: 4px;
-          overflow: hidden;
-          cursor: pointer;
-          background: #f9f9f9;
-        }
+                .carousel-container {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    padding: 0 50px; /* space for arrows */
+                }
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.2s ease;
-        }
+                .arrow-button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: white;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    z-index: 10;
+                    transition: all 0.2s ease;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
 
-        .image-wrapper:hover img {
-          transform: scale(1.05);
-        }
-      `}</style>
+                .arrow-button:hover {
+                    background: #f5f5f5;
+                    border-color: #999;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                }
+
+                .arrow-button.disabled {
+                    opacity: 0.3;
+                    cursor: not-allowed;
+                }
+
+                .arrow-left {
+                    left: 0;
+                }
+
+                .arrow-right {
+                    right: 0;
+                }
+
+                .image-wrapper {
+                    aspect-ratio: 1;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    background: #f9f9f9;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.2s ease;
+                }
+
+                .image-wrapper:hover img {
+                    transform: scale(1.05);
+                }
+
+                @media (max-width: 768px) {
+                    .carousel-container {
+                        padding: 0 40px;
+                    }
+                    .arrow-button {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            `}</style>
         </section>
     );
 }
