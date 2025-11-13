@@ -1,10 +1,9 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { reviewService } from "@/services/reviewService";
 import { RatingBreakdownPanel } from "@/components/review/rating/RatingBreakdownPanel";
 import {ProductReview} from "@/interfaces/review/ProductReview";
-import {ReviewMediaGallery} from "@/components/review/ReviewMediaGallery";
+import {ReviewMediaGallery} from "@/components/review/gallery/ReviewMediaGallery";
 import {TopReviewsList} from "@/components/review/TopReviewsList";
 
 export default function ProductReviewSection({ slug }: { slug: string }) {
@@ -20,9 +19,8 @@ export default function ProductReviewSection({ slug }: { slug: string }) {
 
     return (
         <section className="review-section">
-            <h2>Customer Reviews</h2>
-            <RatingBreakdownPanel data={data.ratingBreakdown} />
-            <ReviewMediaGallery pictures={data.pictures} />
+            <RatingBreakdownPanel slug={slug} data={data.ratingBreakdown} />
+            <ReviewMediaGallery slug={slug} pictures={data.pictures} />
 
             <TopReviewsList reviews={data.topReviews} />
             {/* later: filters, review list, etc. */}

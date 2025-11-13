@@ -1,26 +1,41 @@
 import {Review} from "@/interfaces/review/Review";
+import Link from "next/link";
 
 export function ReviewCard({ review }: { review: Review }) {
     return (
         <div className="review-card">
             <div className="header">
-                <img src={review.userAvatar} alt={review.userName} className="avatar" />
+                {/* Avatar clickable → user page */}
+                <Link href={`/profile/${review.userId}`}>
+                    <img
+                        src={review.userAvatar}
+                        alt={review.userName}
+                        className="avatar cursor-pointer"
+                    />
+                </Link>
+
                 <div>
-                    <span className="name">{review.userName}</span>
+                    {/* Name clickable → user page */}
+                    <Link href={`/profile/${review.userId}`}>
+                        <span className="name cursor-pointer">{review.userName}</span>
+                    </Link>
+
                     {review.verifyStatus === "verified" && <span className="verified">✔ Verified</span>}
                     <div className="stars">{"★".repeat(review.star)}</div>
                 </div>
             </div>
 
-            <h4 className="title">{review.title}</h4>
+            {/* Title clickable → review detail page */}
+            <h4 className="title">
+                <Link href={`/reviews/${review.id}`} className="cursor-pointer">
+                    {review.title}
+                </Link>
+            </h4>
+
+            {/* Review content */}
             <p className="content">{review.content}</p>
 
-            {review.hasMedia && <span className="media-badge">📷</span>}
-
-            <div className="footer">
-                {review.helpfulCount} people found this helpful
-            </div>
-
+            {/* Optional: media / footer */}
         <style jsx>{`
         .review-card {
           border: 1px solid #ddd;

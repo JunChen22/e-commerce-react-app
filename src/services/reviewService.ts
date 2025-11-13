@@ -4,6 +4,7 @@ import {PaginatedResponse} from "@/interfaces/pagination/PaginatedResponse";
 import {ListProductReviewsParams} from "@/interfaces/review/ListProductReviewsParams";
 import {UserReview} from "@/interfaces/review/UserReview";
 import {UserReviewPreview} from "@/interfaces/review/UserReviewPreview";
+import {ReviewMedia} from "@/interfaces/review/ReviewMedia";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL + "/review";
 
@@ -25,7 +26,7 @@ export const reviewService = {
         type = "ALL",
         stars,
         sortBy = "TOP",
-        page = 1,
+        page = 0,
         size = 5,
     }: ListProductReviewsParams): Promise<PaginatedResponse<Review>> {
         const params = new URLSearchParams();
@@ -57,6 +58,15 @@ export const reviewService = {
         const response = await fetch(`${API_URL}/user/${userId}`, {cache: "no-store"});
         if (!response.ok) {
             throw new Error(`Failed to fetch user reviews for ${userId}`);
+        }
+        return response.json();
+    },
+
+    async getPaginatedReviewMedia(slug: string, page: number, size: number): Promise<PaginatedResponse<ReviewMedia>> {
+        console.log(`${API_URL}/media/${slug}?page=${page}&size=${size}`);
+        const response = await fetch(`${API_URL}/media/${slug}?page=${page}&size=${size}`, {cache: "no-store"});
+        if (!response.ok) {
+            throw new Error(`Failed to fetch product reviews (${response.status})`);
         }
         return response.json();
     }
