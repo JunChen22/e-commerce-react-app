@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { reviewService } from "@/services/reviewService";
 import { useParams, useRouter } from "next/navigation";
-import {UserReview} from "@/interfaces/review/UserReview";
+import { UserReview } from "@/interfaces/review/UserReview";
 
 export default function ReviewDetailPage() {
     const { reviewId } = useParams();
@@ -60,7 +60,7 @@ export default function ReviewDetailPage() {
                 {review.helpfulCount} people found this helpful
             </div>
 
-            <style jsx>{`
+        <style jsx>{`
         .review-detail-page {
           max-width: 700px;
           margin: 2rem auto;

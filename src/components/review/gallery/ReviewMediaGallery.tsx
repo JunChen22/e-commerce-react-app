@@ -123,6 +123,7 @@ export function ReviewMediaGallery({pictures, slug}: {
             <style jsx>{`
                 .review-media-gallery {
                     margin-top: 2rem;
+                    border: 1px solid #ddd;
                 }
 
                 h3 {

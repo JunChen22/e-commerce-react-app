@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import {RatingBreakdown} from "@/interfaces/review/RatingBreakdown";
 import {useState} from "react";
+import styles from "./RatingBreakdownPanel.module.css";
+import clsx from "clsx";
 
 export function RatingBreakdownPanel({data, slug}: {
     data: RatingBreakdown | null;
@@ -51,13 +53,13 @@ export function RatingBreakdownPanel({data, slug}: {
     };
 
     return (
-        <div className="rating-breakdown">
+        <div className={styles.ratingBreakdown}>
             <h3> Customer reviews </h3>
 
             {totalReviews > 0 && (
-                <div className="rating-summary">
-                    <div className="summary-row">
-                        <span className="stars">
+                <div className={styles.ratingSummary}>
+                    <div className={styles.summaryRow}>
+                        <span className={styles.stars}>
                           {Array.from({ length: 5 }).map((_, i) => (
                               <svg
                                   key={i}
@@ -71,34 +73,35 @@ export function RatingBreakdownPanel({data, slug}: {
                               </svg>
                           ))}
                         </span>
-                        <span className="average-row">{averageRating.toFixed(1)} out of 5</span>
+                        <span className={styles.averageRow}>{averageRating.toFixed(1)} out of 5</span>
                     </div>
-                    <p className="total">{totalReviews.toLocaleString()} ratings</p>
+                    <p className={styles.total}>{totalReviews.toLocaleString()} ratings</p>
                 </div>
             )}
 
-            <div className="bars">
+            <div className={styles.bars}>
                 {stars.map(({ label, count }) => (
                     <div
                         key={label}
-                        className={`bar-row ${count === 0 ? "disabled" : ""}`}
+                        // className={`bar-row ${count === 0 ? "disabled" : ""}`} // TODO: need to fix the css file
+                        className={styles.barRow}
                         onClick={() => handleClick(label, count)}
                     >
-                        <span className="label">{label} star</span>
-                        <div className="bar-container">
+                        <span className={styles.label}>{label} star</span>
+                        <div className={styles.barContainer}>
                             <div
-                                className="bar-fill"
+                                className={styles.barFill}
                                 style={{ width: `${getPercent(count)}%` }}
                             />
                         </div>
-                        <span className="percent">{getPercent(count)}%</span>
+                        <span className={styles.percent}>{getPercent(count)}%</span>
                     </div>
                 ))}
             </div>
 
-            <div className="info-dropdown">
+            <div className={styles.infoDropdown}>
                 <h4
-                    className="info-header"
+                    className={styles.infoHeader}
                     onClick={() => setIsExpanded(!isExpanded)}
                 >
                     How customer reviews and ratings work
@@ -115,7 +118,7 @@ export function RatingBreakdownPanel({data, slug}: {
                     </svg>
                 </h4>
                 {isExpanded && (
-                    <div className="info-content">
+                    <div className={styles.infoContent}>
                         <p>
                             Customer Reviews, including Product Star Ratings help customers to learn more about
                             the product and decide whether it is the right product for them.
@@ -130,201 +133,13 @@ export function RatingBreakdownPanel({data, slug}: {
                             href="https://localhost:8080/reviews-info"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="info-link"
+                            className={styles.infoLink}
                         >
                             Learn more how customers reviews work on my-shop
                         </a>
                     </div>
                 )}
             </div>
-
-            <style jsx>{`
-                .rating-breakdown {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    background: #fff;
-                    padding: 1.5rem;
-                    border: 1px solid #ddd;
-                    border-radius: 8px;
-                    max-width: 400px;
-                }
-
-                .rating-breakdown h3 {
-                    font-size: 1.65rem;
-                    font-weight: 700;
-                    color: #000;
-                }
-
-
-                // the stars
-                .rating-summary {
-                    margin-top: -0.75rem;
-                    margin-bottom: 1rem;
-                    text-align: center;
-                }
-
-                .summary-row {
-                    display: flex;
-                    align-items: center; /* vertically center stars and text */
-                    gap: 0.75rem; /* stars closer together */
-                }
-
-                .stars svg {
-                    display: inline-block;
-                    vertical-align: middle;
-                    margin-right: -5px; /* tighten spacing between stars */
-                }
-
-                .average-row {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.2rem;
-                    line-height: 1;
-                    font-size: 1.5rem;
-                    color: #000;
-                    font-weight: 400;
-                }
-
-                .total {
-                    margin-top: 0.3rem;
-                    text-align: left;
-                    font-size: 1.2rem; /* slightly bigger total ratings */
-                    color: #666;
-                }
-
-
-                // the bars
-                .bars {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    margin-left: 0; /* align with rating summary */
-                }
-
-                .bar-row {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.75rem;
-                    cursor: pointer;
-                    transition: background 0.2s ease;
-                    padding: 0.3rem 0.5rem;
-                    border-radius: 4px;
-                }
-
-                .label {
-                    text-align: left;
-                    font-weight: 500;
-                    font-size: 0.95rem;
-                    color: #4a43ac;
-                    flex-shrink: 0; /* prevents label from shrinking */
-                }
-
-                .bar-container {
-                    flex: 1;
-                    height: 24px;
-                    border-radius: 4px;
-                    border: 1px solid #2e1818;
-                    overflow: hidden;
-                }
-
-                .bar-fill {
-                    height: 100%;
-                    background: #f5a623;
-                    transition: width 0.4s ease;
-                }
-
-                .percent {
-                    width: 3rem;
-                    text-align: center;
-                    font-size: 0.9rem;
-                    color: #4a43ac;
-                    font-variant-numeric: tabular-nums;
-                    flex-shrink: 0; /* prevents percent from shrinking */
-                }
-
-                .bar-row:hover:not(.disabled) .label,
-                .bar-row:hover:not(.disabled) .percent {
-                    text-decoration: underline;
-                    color: #007185; 
-                }
-
-                .bar-row:hover:not(.disabled) {
-                    background: transparent; /* remove the background change if you don't want it */
-                }
-                
-                .bar-row.disabled {
-                    opacity: 0.6;
-                    pointer-events: none; /* disables all clicks */
-                    cursor: text; /* I-beam cursor for entire disabled row */
-                }
-
-                .bar-row.disabled .label,
-                .bar-row.disabled .percent {
-                    color: #000; /* black text when disabled */
-                    pointer-events: auto; /* allows text selection */
-                }
-
-
-
-
-
-
-                // info-dropdown
-                .info-dropdown {
-                    margin-bottom: 1rem;
-                }
-
-                .info-header {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    font-size: 1rem;
-                    font-weight: 600;
-                    color: #004385;
-                    margin: 0;
-                    padding: 0.5rem 0;
-                    cursor: pointer; /* moved cursor here */
-                    user-select: none; /* moved user-select here */
-                }
-
-                .info-header:hover {
-                    text-decoration: underline;
-                }
-
-                .arrow {
-                    flex-shrink: 0;
-                    margin-left: 0.5rem;
-                }
-
-                .arrow.expanded {
-                    transform: rotate(180deg); /* flips arrow when expanded */
-                }
-
-                .info-content {
-                    margin: 0.5rem 0 0 0;
-                    background: #f7f7f7;
-                    border-radius: 4px;
-                    font-size: 0.9rem;
-                    line-height: 1.5;
-                    color: #140101;
-                }
-
-                .info-content p {
-                    margin: 0 0 0.5rem 0; /* adds space below paragraph */
-                }
-
-                .info-link {
-                    color: #002385;
-                    text-decoration: none;
-                    font-weight: 500;
-                }
-
-                .info-link:hover {
-                    text-decoration: underline;
-                    color: #8c1fc7; /* darker orange on hover, or keep same color */
-                }
-            `}</style>
         </div>
     );
 }

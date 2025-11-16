@@ -11,6 +11,11 @@ export function ReviewSummary({ slug }: { slug: string }) {
                 roasted vegetables and French fries, while being easy to clean and operate. Customers also praise its quiet operation.
             </p>
             <style jsx>{`
+                
+                .summary {
+                    border: 1px solid #ddd;
+                }
+                
                 .summary h3 {
                     font-size: 1.65rem;
                     font-weight: 700;

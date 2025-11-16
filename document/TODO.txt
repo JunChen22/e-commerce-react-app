@@ -1,0 +1,6 @@
+
+remove tailwind for now.
+
+
+restructure the product page
+- make it more moduler

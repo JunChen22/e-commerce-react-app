@@ -15,6 +15,10 @@ export function TopReviewsList({ reviews }: { reviews: Review[] }) {
 
 
         <style jsx>{`
+            .top-reviews {
+                border: 1px solid #ddd;
+            }
+            
             .top-reviews h3 {
                 font-size: 1.5rem;
                 font-weight: 700;

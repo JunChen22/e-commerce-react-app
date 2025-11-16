@@ -1,4 +1,3 @@
-// app/brand/[brandSlug]/components/BrandHeader.tsx
 import { Brand } from '@/interfaces/brand/Brand';
 
 export default function BrandHeader({ brand }: { brand: Brand }) {

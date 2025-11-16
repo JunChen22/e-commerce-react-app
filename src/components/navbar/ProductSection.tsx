@@ -3,8 +3,7 @@ import Link from 'next/link';
 
 const ProductSection = () => {
     const trendingLinks = [
-        { name: 'All Products', href: '/product' },
-        { name: 'All Brands', href: '/brand' }
+        { name: 'All Products', href: '/product' }
     ];
         
     return (

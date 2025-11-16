@@ -1,0 +1,178 @@
+.ratingBreakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.ratingBreakdown h3 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #000;
+}
+
+/* the stars */
+.ratingSummary {
+   margin-top: -0.75rem;
+   margin-bottom: 1rem;
+   text-align: center;
+}
+
+.summaryRow {
+    display: flex;
+    align-items: center; /* vertically center stars and text */
+    gap: 0.75rem; /* stars closer together */
+}
+
+.stars svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -5px; /* tighten spacing between stars */
+}
+
+.averageRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    line-height: 1;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 400;
+}
+
+.total {
+    margin-top: 0.3rem;
+    text-align: left;
+    font-size: 1.2rem; /* slightly bigger total ratings */
+    color: #666;
+}
+
+/* the bars */
+.bars {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   margin-left: 0; /* align with rating summary */
+}
+
+.barRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+}
+
+.label {
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #4a43ac;
+    flex-shrink: 0; /* prevents label from shrinking */
+}
+
+.barContainer {
+    flex: 1;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #2e1818;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    background: #f5a623;
+    transition: width 0.4s ease;
+}
+
+.percent {
+    width: 3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4a43ac;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0; /* prevents percent from shrinking */
+}
+
+.barRow:hover:not(.disabled) .label,
+.barRow:hover:not(.disabled) .percent {
+    text-decoration: underline;
+    color: #007185;
+}
+
+.barRow:hover:not(.disabled) {
+    background: transparent; /* remove the background change if you don't want it */
+}
+
+.barRow.disabled {
+    opacity: 0.6;
+    pointer-events: none; /* disables all clicks */
+    cursor: text; /* I-beam cursor for entire disabled row */
+}
+
+.barRow.disabled .label,
+.barRow.disabled .percent {
+    color: #000; /* black text when disabled */
+    pointer-events: auto; /* allows text selection */
+}
+
+/* info-dropdown */
+.infoDropdown {
+   margin-bottom: 1rem;
+}
+
+.infoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #004385;
+    margin: 0;
+    padding: 0.5rem 0;
+    cursor: pointer; /* moved cursor here */
+    user-select: none; /* moved user-select here */
+}
+
+.infoHeader:hover {
+    text-decoration: underline;
+}
+
+.arrow {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+.arrow.expanded {
+    transform: rotate(180deg); /* flips arrow when expanded */
+}
+
+.infoContent {
+    margin: 0.5rem 0 0 0;
+    background: #f7f7f7;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #140101;
+}
+
+.infoContent p {
+    margin: 0 0 0.5rem 0; /* adds space below paragraph */
+}
+
+.infoLink {
+    color: #002385;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.infoLink:hover {
+    text-decoration: underline;
+    color: #8c1fc7; /* darker orange on hover, or keep same color */
+}
