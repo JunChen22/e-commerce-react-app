@@ -26,38 +26,36 @@ export default function ProductInfo({
   return (
     <div className="space-y-6">
       
-          {/* Product price */}
-          <div>
-            <div className="flex items-baseline">
-              <span className="text-3xl font-bold">${selectedSku.promotionPrice}</span>
-              {selectedSku.originalPrice > selectedSku.promotionPrice && (
-                <span className="ml-2 text-gray-500 line-through">
-                  ${selectedSku.originalPrice}
-                </span>
-              )}
-            </div>
-          </div>
-
-          {/* Flash Sale Component */}
-          {salesStatus && (
-            <div className="mb-4">
-              <FlashSale salesStatus={salesStatus} />
-            </div>
+      {/* Product price */}
+      <div>
+        <div className="flex items-baseline">
+          <span className="text-3xl font-bold">${selectedSku.promotionPrice}</span>
+          {selectedSku.originalPrice > selectedSku.promotionPrice && (
+            <span className="ml-2 text-gray-500 line-through">
+              ${selectedSku.originalPrice}
+            </span>
           )}
-
-          {/* Key features */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Key Features</h3>
-        <ul className="list-disc pl-5 space-y-2">
-          {bulletPoints
-            .sort((a, b) => a.orderIndex - b.orderIndex)
-            .map((point) => (
-              <li key={point.orderIndex}>{point.bulletPoint}</li>
-            ))}
-        </ul>
+        </div>
       </div>
 
-          {/* Specifications */}
+      {/* Flash Sale Component */}
+      {salesStatus && (
+        <div className="mb-4">
+          <FlashSale salesStatus={salesStatus} />
+        </div>
+      )}
+
+        {/* Key features */}
+        <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Key Features</h3>
+            <ul className="list-disc pl-5 space-y-2">
+                {sortedBulletPoints.map((point) => (
+                    <li key={point.id}>{point.bulletPoint}</li>
+                ))}
+            </ul>
+        </div>
+
+        {/* Specifications */}
         <div className="space-y-4">
             <h3 className="text-lg font-semibold">Specifications</h3>
             <div className="grid grid-cols-2 gap-4">

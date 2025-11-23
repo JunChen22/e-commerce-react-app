@@ -17,6 +17,13 @@ export default async function ProductDetailPage({
     const productDetail = await productService.getProductDetail(slug, skuCode);
     const { product, selectedSku, categoryPath, otherSkus, medias, attributes, bulletPoints, salesStatus } = productDetail;
 
+    const productForCart = {
+        name: selectedSku.skuName,
+        sku: selectedSku.skuCode,
+        pic: medias[0]?.url || '',
+        price: selectedSku.promotionPrice
+    };
+
     return (
         <div>
             <CategoryBreadcrumb categoryPath={categoryPath} />
@@ -63,7 +70,7 @@ export default async function ProductDetailPage({
 
                 {/* Right column: BuyBox */}
                 <div className="buybox-column">
-                    <BuyBox />
+                    <BuyBox product={productForCart} />
                 </div>
             </div>
 
